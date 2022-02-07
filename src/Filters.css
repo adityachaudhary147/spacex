@@ -1,0 +1,55 @@
+.filters{
+    flex:0.3;
+}
+.filter-wid{
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    padding: auto;
+    padding-bottom: 13px;
+}
+
+.filter-heading{
+    border-bottom: 2px solid whitesmoke;
+    text-align: center;
+    font-size: medium;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    
+}
+.filter-super-heading{
+    margin: auto;
+    margin-top: 4px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+
+}
+.filter-grid{
+display: grid;
+grid-template-columns: 1fr 1fr;
+margin: auto;
+
+row-gap:14px;
+}
+@media only screen and (max-width: 950px) {
+    .filter-grid{
+        grid-template-columns: 1fr;
+    }
+    .filter-wid{
+        width: 85%;
+    }
+}
+.filter-in{
+    text-align: center;   
+    background-color: #90EE90;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+.highlight{
+    background-color: hotpink;
+}

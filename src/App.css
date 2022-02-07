@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+.app {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.content {
+  display: flex;
+}
+.cards {
+  flex: 0.7;
+}
+.grid-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 40px;
+}
+@media only screen and (max-width: 600px) {
+  .grid-card {
+    grid-template-columns: 1fr;
+  }
+  .app {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .grid-card {
+    grid-template-columns: 1fr 1fr;
+  }
+  .app {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .grid-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1080px) {
+  .grid-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1340px) {
+  .grid-card {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.cards .img {
+  width: 160px;
+  display: block;
+  margin: auto;
+}
+.item {
+  margin-left: 10px;
+}
+.imgdiv {
+  background-color: lightblue;
+  margin: 10px;
+  border-radius: 3px;
+}
+.card {
+  background-color: lightcyan;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.space {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
