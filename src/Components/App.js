@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../CSS/App.css';
 import Cards from './Cards';
 import Filters from './Filters';
 export default function App() {

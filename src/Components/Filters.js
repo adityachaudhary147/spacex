@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Filter from "./Filter";
-import "./Filters.css";
+import "../CSS/Filters.css";
+import { fetchList } from "../Redux/Reducers/flightList";
+import { useDispatch } from "react-redux";
 export default function Filters() {
+  const dispatch = useDispatch();
   const years = [
     2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017,
     2018, 2019, 2020, 2021, 2022,
   ];
+  useEffect(() => {
+    dispatch(fetchList());
+  });
   return (
     <div className="filters">
       <div className="filter-wid">

@@ -1,0 +1,8 @@
+export const MODIFY_YEAR="MODIFY_YEAR";
+export const MODIFY_LAND="MODIFY_LAND";
+export const MODIFY_LAUNCH="MODIFY_LAUNCH";
+
+export const REQUEST_LIST="REQUEST_LIST";
+export const RESPONSE_LIST="RESPONSE_LIST";
+export const EMPTY_LIST="EMPTY_LIST";
+

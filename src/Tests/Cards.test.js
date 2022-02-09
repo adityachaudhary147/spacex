@@ -1,4 +1,4 @@
-import Cards from "./Cards";
+import Cards from "../Components/Cards";
 import React, { useState } from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
@@ -33,6 +33,8 @@ afterEach(() => {
   container = null;
   jest.useRealTimers();
 });
+
+
 it("testing for cards and one input", async () => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
@@ -41,9 +43,8 @@ it("testing for cards and one input", async () => {
   );
   const spy = jest.spyOn(redux, "useSelector");
   spy.mockReturnValue({
-    land: "",
-    year: "",
-    launch_success: "",
+    List:{
+    loading:false,data:MockValue}
   });
   await act(async () => {
     render(<Cards />, container);
@@ -58,6 +59,7 @@ it("testing for cards and one input", async () => {
     "launch success: " + MockValue[0].launch_success
   );
 });
+
 it("No data found testing ", async () => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
@@ -66,9 +68,8 @@ it("No data found testing ", async () => {
   );
   const spy = jest.spyOn(redux, "useSelector");
   spy.mockReturnValue({
-    land: "",
-    year: "",
-    launch_success: "",
+    List:{
+      loading:false,data:[]}
   });
   await act(async () => {
     render(<Cards />, container);
@@ -76,5 +77,26 @@ it("No data found testing ", async () => {
   // screen.debug();
   expect(container.querySelector(".grid-card").textContent).toBe(
     "No launches Found"
+  );
+});
+
+
+it("Loading Testing ", async () => {
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve([]),
+    })
+  );
+  const spy = jest.spyOn(redux, "useSelector");
+  spy.mockReturnValue({
+    List:{
+      loading:true,data:[]}
+  });
+  await act(async () => {
+    render(<Cards />, container);
+  });
+  // screen.debug();
+  expect(container.querySelector(".grid-card").textContent).toBe(
+    "Loading..."
   );
 });
